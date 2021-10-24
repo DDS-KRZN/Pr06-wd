@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/canvas.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/canvas.js"></script>
+    <script>
+        window.onload = function (){
+            canvas('#draw', {
+                width: 500,
+                height: 300,
+                strokeWidth: 5,
+                strokeColor: "#df4b26"
+            })
+        }
+    </script>
+</head>
+<body>
+<header class="header"><p><img src="assets/img/email.png" height="30" width="30" alt="Logo" hspace="10">Header...</p></header>
+<div class="container">
+    <main class="center column">
+        <article>
+            <canvas id="draw">
+                <div class="toolbar" id="toolbar"></div>
+            </canvas>
+            <br><input class="btn" id="clear" type="button" value="Clear">
+            <!--<button class="btn" id="clearBtn" onclick="canvas">Clear</button>-->
+            <script>
+                function myFunction(){
+                    canvas.clear();
+                }
+                clear.addEventListener("click", myFunction())
+            </script>
+        </article>
+    </main>
+    <nav class="left column">
+        <h3>Left heading</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+        <ul>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="media.html">Media</a></li>
+        </ul>
+        <ul>
+            <li><a href="slider.html">Slider</a></li>
+        </ul>
+        <ul>
+            <li><a href="table.html">Table</a></li>
+        </ul>
+    </nav>
+    <div class="right column">
+        <h3>Right heading</h3>
+        <p></p>
+    </div>
+    <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+    <footer class="footer"><p><img src="assets/img/email.png" height="20" width="20" alt="Logo" hspace="10">Footer...</p></footer>
+</div>
+</body>
+</html>

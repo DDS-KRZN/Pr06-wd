@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Slider</title>
+    <script src="assets/js/script.js"></script>
+    <script>
+        window.onload = function() {
+            // ви можете зробити скільки завгодно слайдів
+            let slides = [
+                {
+                    title: "Karazin University",
+                    background: "https://www.kitangry.com/wp-content/uploads/2020/01/Karazin-university.jpg",
+                    link: "https://karazin.ua/"
+                }, {
+                    title: "Computer Science Department",
+                    background: "https://www.hp.com/us-en/shop/app/assets/images/uploads/prod/best-laptop-for-computer-science-hero15808348353268.jpg",
+                    link: "http://www-csd.univer.kharkov.ua/"
+                }, {
+                    title: "Discord",
+                    background: "https://i.pinimg.com/originals/d0/a3/c3/d0a3c3ffade9804fad4075b13323d31d.png",
+                    link: "https://discord.com/"
+                }
+            ]
+            Slider.initSlider(slides);
+        };
+    </script>
+</head>
+<body>
+<header class="header"><p><img src="assets/img/email.png" height="30" width="30" alt="Logo" hspace="10">Header...</p></header>
+<div class="container">
+    <main class="center column">
+        <div id="slider"></div>
+        <!--<button class="button" onclick="Slider.prevSlide()">Prev</button>
+        <button class="button" onclick="Slider.nextSlide()">Next</button>-->
+        <input class="button" id="prev" type="button" value="Prev"/>
+        <input class="button" id="next" type="button" value="Next"/>
+        <input class="button-blue" id="show" type="button" value="Show/Hide slider"/>
+        <button class="button-red" id="toggle" onclick="myFunction()">Start</button>
+
+        <script>
+            function handler1(e){
+                Slider.prevSlide();
+            }
+            function handler2(e){
+                Slider.nextSlide();
+            }
+            function handler3(e){
+                if (nowShow == true){
+                    Slider.hideSlide();
+                    nowShow = false;
+                }
+                else {
+                    Slider.showSlide();
+                    nowShow = true;
+                }
+
+            }
+            function handler4(e){
+
+            }
+
+            prev.addEventListener("click", handler1);
+            next.addEventListener("click", handler2);
+            show.addEventListener("click", handler3);
+            hide.addEventListener("click", handler4);
+            function myFunction(){
+
+                toggle.addEventListener("click", (event)=>{
+                    if (event.target.classList.contains('start')){
+                        event.target.innerHTML = 'Start';
+                        clearInterval(interval)
+                    } else {
+                        event.target.innerHTML = 'Stop';
+                        interval = setInterval(()=>{
+                            Slider.nextSlide();
+                        },1000)
+                    }
+                    event.target.classList.toggle('start')
+                })
+            }
+
+
+        </script>
+
+
+    </main>
+    <nav class="left column">
+        <h3>Left heading</h3>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+        <ul>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="media.html">Media</a></li>
+        </ul>
+        <ul>
+            <li><a href="table.html">Table</a></li>
+        </ul>
+        <ul>
+            <li><a href="canvas.html">Canvas</a></li>
+        </ul>
+    </nav>
+    <div class="right column">
+        <h3>Right heading</h3>
+        <p></p>
+    </div>
+    <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+    <footer class="footer"><p><img src="assets/img/email.png" height="20" width="20" alt="Logo" hspace="10">Footer...</p></footer>
+</div>
+</body>
+</html>
